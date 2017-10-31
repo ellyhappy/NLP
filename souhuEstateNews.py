@@ -24,8 +24,6 @@ conn.close()
 
 # 将mysql获取的tuple转化为list类型，只要list中每个元组的第二个值，即新闻标题
 
-#print data
-
 print '================='
 data_list = list(data)
 #print data_list[1][1]
@@ -53,29 +51,6 @@ for j in wordCut:
     score = sumScore.sumscore(j)
     sscore.append(score)
 print sscore
-
-# 尝试更新一条mysql，失败
-
-# score = sscore[0]
-# URL = data_list[0][0]
-
-
-# conn = pymysql.connect(host = '127.0.0.1',
-#     port = 3306,
-#     user = 'root',
-#     passwd = '1111',
-#     db = 'news',
-#     charset = 'utf8')
-
-# cursor = conn.cursor()
-
-# sql = 'update news.souhu_estate set score=' + score + 'where URL=' + URL + ';'
-# cursor.execute(sql)
-# data = cursor.fetchall()
-
-# conn.commit()
-# cursor.close()
-# conn.close()
 
 # 存入excel中
 import xlwt
